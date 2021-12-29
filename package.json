@@ -1,0 +1,26 @@
+{
+  "name": "catfood-fyi",
+  "version": "1.0.0",
+  "description": "- [ ] make a list of 10 brands and check whether their websites allow scraping or not  - [ ] scrape at least one of those and contribute them to catfooddb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catfood-fyi/catfood-fyi.git"
+  },
+  "keywords": [
+    "catfood"
+  ],
+  "author": "culi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catfood-fyi/catfood-fyi/issues"
+  },
+  "homepage": "https://github.com/catfood-fyi/catfood-fyi#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
