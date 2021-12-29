@@ -1,7 +1,17 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const writeFile = require('../utils');
 
 const URL = 'https://carna4.com/our-products/cat-food/';
+
+const parseNutrientText = (value) => {
+  // replace all whitespace with a single space
+  return value
+    .replaceAll(/[ \u00A0\s]+/g, ' ')
+    .replaceAll(/\u2013/g, '-')
+    .trim().toLowerCase()
+  ;
+};
 
 const main = async (url = URL) => {
   const products = [];
@@ -43,21 +53,20 @@ const main = async (url = URL) => {
           // if the first td has a strong tag as a child, set the currentTable to that text
           const firstTd = $(tr).find('td').first();
           if (firstTd.find('strong').length) {
-            currentTable = $(firstTd).children().first().text().toLowerCase().trim();
+            currentTable = parseNutrientText($(firstTd).children().first().text());
             products.forEach(p => p[currentTable] = {});
           } else {
             $(tr).find('td').each((i, td) => {
               // if non-empty td
               if ($(td).text().trim()) {
                 if (i === 0) {
-                  currentNutrient = $(td).text().toLowerCase().trim();
+                  currentNutrient = parseNutrientText($(td).text());
                 } else {
                   const biotics = currentTable.includes('biotics') || currentTable.includes('enzymes');
-                  console.log(i + biotics);
                   if (biotics && (i === 2 || i === 3)) {
-                    products[(i - 1) % 2][currentTable][currentNutrient] = $(td).text().trim();
+                    products[(i - 1) % 2][currentTable][currentNutrient] = parseNutrientText($(td).text());
                   } else if (i === 1 || i === 2) {
-                    products[i % 2][currentTable][currentNutrient] = $(td).text().trim();
+                    products[i % 2][currentTable][currentNutrient] = parseNutrientText($(td).text());
                   }
                 }
               }
@@ -74,5 +83,4 @@ const main = async (url = URL) => {
   return products;
 };
 
-// main();
-main().then(console.log);
+main().then(data => writeFile('carna4', data));
