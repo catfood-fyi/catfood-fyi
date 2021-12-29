@@ -1,0 +1,91 @@
+{
+  "abound": {
+
+  },
+  "blue": {
+    "name": "Blue Buffalo",
+    "can_scrape": false,
+    "scrape_details": "Based on their robots.txt, they don't seem to allow scraping of the product listing pages.",
+    "terms": null,
+    "robots": "https://bluebuffalo.com/robots.txt",
+    "owned_by": "general_mills",
+    "sisters": [],
+    "updated_at": "2021-12-27"
+  },
+  "crave": {
+
+  },
+  "carna4": {
+    "name": "Carna4",
+    "can_scrape": true,
+    "scrape_details": "Seems totes ok! They only have 2 cat products and their site is just a table so this would def need to be updated later.",
+    "terms": null,
+    "robots": "https://carna4.com/robots.txt",
+    "owned_by": null,
+    "sisters": [],
+    "updated_at": "2021-12-27"
+  },
+  "lucy": {
+    "name": "Lucy Pet Products",
+    "can_scrape": false,
+    "scrape_details": "It's a little murky. Going by the robots.txt it seems all ok, but the TOC are kinda unclear and I'd err on the side of caution unless I email them directly and get a goahead. They have 2 dry foods (https://www.lucypetproducts.com/pet-food-cats/) and 4 wet foods (https://www.lucypetproducts.com/cat-food-wet/)",
+    "terms": "https://www.lucypetproducts.com/terms-conditions/",
+    "robots": "https://www.lucypetproducts.com/robots.txt",
+    "owned_by": null,
+    "sisters": [],
+    "updated_at": "2021-12-27"
+  },
+  "luvsome": {
+
+  },
+  "nulo": {
+    "name": "Nulo Pet Food",
+    "can_scrape": true,
+    "scrape_details": "Can't find any TOCs, but based on the robots.txt it looks like they're cool with it as long as we don't sort by or do any querying.",
+    "terms": null,
+    "robots": "https://nulo.com/robots.txt",
+    "owned_by": null,
+    "sisters": [],
+    "updated_at": "2021-12-27"
+  },
+  "nutrish": {
+    "name": "Rachael Ray™ Nutrish",
+    "can_scrape": true,
+    "scrape_details": "Empty robots.txt. Looks like I can scrape https://www.nutrish.com/cat for all their cat products!",
+    "terms": "https://www.jmsmucker.com/terms",
+    "robots": "https://www.nutrish.com/robots.txt",
+    "owned_by": "jm_smucker",
+    "sisters": ["dads", "meow_mix", "9lives"],
+    "updated_at": "2021-12-27"
+  },
+  "open_nature": {
+    "name": "Open Nature",
+    "can_scrape": false,
+    "scrape_details": "It's hard to figure out. Open Nature is a store brand owned by Albertsons(?) which owns a bunch of other chains like Safeway and Vons. Open Nature makes a lot of non pet-related products and they don't have a website for the label itself so I'm not really sure where to find a relevant TOC. Presumably I could scrape it by scraping the listings on Safeway or Albertsons' website. Some helpful links for Albertson store brands: • https://www.acmemarkets.com/shop/aisles/pet-care/cat-care.2977.html?page=1&sort=&brand=Value%20Corner~Signature%20SELECT~Signature%20Pet%20Care~Open%20Nature • https://www.pavilions.com/shop/aisles/pet-care/cat-care.2739.html?page=1&sort=&brand=Signature%20SELECT~Signature%20Pet%20Care~Open%20Nature • https://www.safeway.com/shop/aisles/pet-care/cat-care.3132.html?page=1&sort=&brand=Value%20Corner~Signature%20Pet%20Care~Open%20Nature • https://www.albertsons.com/shop/search-results.html?sort=&brand=Signature%20SELECT~Signature%20Pet%20Care~Open%20Nature&aisleName=Cat%20Care%7C1_22_2",
+    "terms": null,
+    "robots": null,
+    "owned_by": "albertsons",
+    "sisters": ["signature_pet_care", "signature_select", "value_corner"],
+    "updated_at": "2021-12-27"
+  },
+  "pet_pride": {
+    "name": "Pet Pride™",
+    "scrape_details": "It's a Kroger brand so scraping is gonna be really similar to abound and luvsome and other store-brands like open nature.",
+    "owned_by": "Kroger",
+    "sisters": ["abound", "luvsome"],
+    "updated_at": "2021-12-27"
+  },
+  "reveal": {
+    "name": "Reveal Pet Food",
+    "can_scrape": true,
+    "scrape_details": "Cannot scrape the site to find all product listings if using query parameters, but you can scrape individual product pages and also the full product listing page.",
+    "terms": "https://revealpetfood.com/terms-conditions/",
+    "robots": "https://revealpetfood.com/robots.txt",
+    "owned_by": "MPM Products",
+    "sisters": ["applaws", "encore" ],
+    "updated_at": "2021-12-27"
+  },
+  "squarepet": {
+
+  }
+}
